@@ -54,7 +54,7 @@ async function handleSubmit() {
 
 async function getUserData() {
   try {
-    const response = await axios.get('http://localhost:4000/api/user', {
+    const response = await axios.get('https://time-manager-irre.onrender.com/api/user', {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
