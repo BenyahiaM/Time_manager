@@ -4,7 +4,7 @@ import axios from 'axios';
 
 // Base Axios instance
 const api = axios.create({
-  baseURL: 'http://localhost:4000/api',
+  baseURL: 'https://time-manager-irre.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
