@@ -25,7 +25,7 @@ function handleClick(value) {
     
     <div @click="handleClick('div3')" class="flex">
       <div class="w-full mb-12 ml-12 m-4 bg-gray-800 rounded-xl hover:scale-[102%] hover:-translate-x-[1%] hover:translate-y-[1%] duration-300 shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] relative">
-        <img src="../img/calendar.png" alt="Image 3" class="absolute top-0 left-0 w-full h-full object-cover rounded-xl" />
+        <img src="../img/Calendar.png" alt="Image 3" class="absolute top-0 left-0 w-full h-full object-cover rounded-xl" />
       </div>
     </div>
     
