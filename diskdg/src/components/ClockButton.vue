@@ -19,7 +19,7 @@ async function checkClockStatus() {
   try {
     const response = await api.getUserClockStatus();
     if (response.status === 200) {
-      isClockedIn.value = true; // User is clocked in
+      isClockedIn.value = response.data.status;  // User is clocked in
     } else {
       isClockedIn.value = false; // User is clocked out
     }
