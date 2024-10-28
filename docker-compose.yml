@@ -1,0 +1,38 @@
+version: "3.8"
+
+services:
+  db:
+    image: "postgres:11-alpine"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: myapp_dev
+    ports:
+      - "5442:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Persist database data
+
+  web:
+    build:
+      context: ./time_manager
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "ecto://postgres:postgres@db:5432/myapp_dev"  # Fixed connection URL
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./time_manager:/app
+    restart: on-failure  # Ensure automatic restart on failures
+
+  front:
+    build:
+      context: ./diskdg
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    restart: always  # Keep frontend up automatically
+
+volumes:
+  pgdata:

@@ -1,0 +1,30 @@
+{
+  "name": "radix-vue-toast",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@iconify/vue": "latest",
+    "@radix-ui/colors": "latest",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "bootstrap-vue-3": "^0.5.1",
+    "chart.js": "^4.4.5",
+    "pinia": "^2.2.4",
+    "pwa": "^1.9.7",
+    "radix-vue": "1.9.7",
+    "vue": "latest",
+    "vue-cal": "^4.10.0",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/vue": "^2.0.0",
+    "@vitejs/plugin-vue": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest",
+    "vite": "latest",
+    "vue-tsc": "latest"
+  }
+}
