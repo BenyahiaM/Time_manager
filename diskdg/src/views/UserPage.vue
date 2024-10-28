@@ -6,15 +6,17 @@ import { computed, watch } from 'vue';
 import { useSessionStore } from '../stores/session';
 
 const sessionStore = useSessionStore();
-const isAuthenticated = computed(() => sessionApi.isAuthenticated());
+const isAuthenticated = computed(() => sessionStore.isConnected);
 
-watch(() => sessionStore.isConnected, () => {
-    isAuthenticated.value = sessionApi.isAuthenticated();
+  watch(() => sessionStore.isConnected, (newVal) => {
+    if (newVal) {
+        isAuthenticated.value = sessionStore.isConnected;
+    }
 });
 </script>
 
 <template>
-  <div :class="['h-screen bg-blue-500 flex items-center justify-center', ]">
+  <div :class="['h-screen bg-blue-500 flex items-center justify-center']">
     <UserProfile v-if="isAuthenticated" />
     <LoginPage v-else />
   </div>
